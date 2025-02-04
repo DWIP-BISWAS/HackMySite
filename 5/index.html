@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Steganography Challenge</title>
+    <style>
+        body { background-color: black; color: lime; font-family: monospace; text-align: center; padding: 50px; }
+        img { border: 2px solid lime; margin: 20px; width: 300px; }
+        input, button { background: black; color: lime; border: 1px solid lime; padding: 5px; }
+    </style>
+</head>
+<body>
+    <h1>🕵️ Level 5: Steganography</h1>
+    <p>A hacker has hidden the password inside this image. Can you find it?</p>
+    <img src="download.png" alt="Secret Image">
+    
+    <form action="check_password.php" method="POST">
+        <input type="text" name="password" placeholder="Enter Password">
+        <button type="submit">Submit</button>
+    </form>
+</body>
+</html>

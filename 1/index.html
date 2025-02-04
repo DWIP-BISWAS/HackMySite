@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hacked Admin Portal</title>
+    <style>
+        body { background-color: black; color: lime; font-family: monospace; text-align: center; padding: 50px; }
+        .glitch { 
+            font-size: 24px;
+            font-weight: bold;
+            color: red;
+            text-shadow: 2px 2px 5px rgba(255, 0, 0, 0.8);
+            animation: glitch 1s infinite alternate;
+        }
+        @keyframes glitch {
+            0% { transform: skewX(-5deg); }
+            100% { transform: skewX(5deg); }
+        }
+        .typing { font-size: 18px; display: inline-block; }
+        a { color: cyan; font-size: 20px; text-decoration: none; }
+        a:hover { text-decoration: underline; }
+    </style>
+</head>
+<body>
+    <h1 class="glitch">🚨 ALERT! 🚨</h1>
+    <p class="typing"></p>
+    <p><a href="admin.html">Enter the Admin Portal</a></p>
+
+    <script>
+        let text = "The admin portal has been breached by an unknown hacker.\n\nThey left a message behind...\n\n\"Security is just an illusion. Can you break in?\"";
+        let index = 0;
+        function typeEffect() {
+            if (index < text.length) {
+                document.querySelector(".typing").innerHTML += text.charAt(index);
+                index++;
+                setTimeout(typeEffect, 50);
+            }
+        }
+        typeEffect();
+    </script>
+</body>
+</html>

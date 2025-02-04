@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Login</title>
+    <style>
+        body { background-color: black; color: lime; font-family: monospace; text-align: center; padding: 50px; }
+        input, button { background-color: black; color: lime; border: 1px solid lime; padding: 5px; margin: 5px; }
+        button:hover { background-color: darkgreen; }
+        .error { animation: shake 0.5s; }
+        @keyframes shake {
+            0%, 100% { transform: translateX(0); }
+            25% { transform: translateX(-5px); }
+            50% { transform: translateX(5px); }
+            75% { transform: translateX(-5px); }
+        }
+    </style>
+</head>
+<body>
+    <h1>Admin Login</h1>
+    <p>The hacker left a message:</p>
+    <p><i>"Look not deep, scratch the surface..."</i></p>
+    
+    <form id="loginForm">
+        <label>Username:</label> <input type="text" id="username" required><br>
+        <label>Password:</label> <input type="password" id="password"><br>
+        <button type="submit">Login</button>
+    </form>
+    
+    <p id="errorMessage" style="color: red; display: none;">Access Denied.</p>
+
+    <script>
+        document.getElementById("loginForm").addEventListener("submit", function(event) {
+            event.preventDefault();
+            let username = document.getElementById("username").value;
+            let password = document.getElementById("password").value;
+            password = (48 * 1024 / 4) + (16 * 2048) - (2^6 * 250);
+            password = (500 * 4444) / 100 + 222222;
+            if (username === "Iamadonkey") {
+                window.location.href = "success.html";
+            } else {
+                document.getElementById("errorMessage").style.display = "block";
+                document.getElementById("loginForm").classList.add("error");
+                setTimeout(() => { document.getElementById("loginForm").classList.remove("error"); }, 500);
+            }
+        });
+    </script>
+</body>
+</html>

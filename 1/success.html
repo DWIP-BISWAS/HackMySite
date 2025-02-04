@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Access Granted</title>
+    <style>
+        body { background-color: black; color: lime; font-family: monospace; text-align: center; padding: 50px; }
+        h1 { font-size: 40px; }
+        p { font-size: 20px; }
+        .glitch { 
+            font-size: 30px; 
+            font-weight: bold;
+            color: red;
+            text-shadow: 2px 2px 5px rgba(255, 0, 0, 0.8);
+            animation: glitch 1s infinite alternate;
+        }
+        @keyframes glitch {
+            0% { transform: skewX(-5deg); }
+            100% { transform: skewX(5deg); }
+        }
+    </style>
+</head>
+<body>
+    <h1>✅ ACCESS GRANTED</h1>
+    <p>Congratulations! You have successfully breached the system.</p>
+    <p class="glitch" id="glitchText">But was this really secure? Think again...</p>
+    <p><i>"Hackers don't look for secrets. They look for mistakes."</i></p>
+    <p><a href="../2/index.html">Next Round</a></p>
+    <script>
+        function glitchEffect() {
+            let text = "But was this really secure? Think again...";
+            let chars = "!@#$%^&*()_+=-{}[]";
+            let newText = text.split("").map(char => Math.random() > 0.8 ? chars[Math.floor(Math.random() * chars.length)] : char).join("");
+            document.getElementById("glitchText").innerText = newText;
+            setTimeout(glitchEffect, 300);
+        }
+        glitchEffect();
+    </script>
+</body>
+</html>

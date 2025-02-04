@@ -33,6 +33,6 @@ This project was made as an inspiration from hackthissite.org .🙌
 
 **MADE WITH ❤️ BY DWIP**
 
-**WEBSITE COMING SOON!**💥
+**WEBSITE COMING SOON!💥**
 
 This is a complete open-source project so feel free to contribute to this project.😄

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Terminal Access</title>
+    <style>
+        body { background-color: black; color: lime; font-family: monospace; padding: 20px; }
+        #terminal { width: 90%; height: 300px; background: black; border: 2px solid lime; padding: 10px; overflow-y: auto; margin: auto; }
+        input { background: black; color: lime; border: none; font-family: monospace; width: 100%; }
+        .glitch { animation: glitch 0.5s infinite alternate; }
+        @keyframes glitch {
+            0% { transform: skewX(-5deg); }
+            100% { transform: skewX(5deg); }
+        }
+    </style>
+</head>
+<body>
+    <h1>🔓 Terminal Access</h1>
+    <p>A system lockdown is in place. Enter the correct command to continue.</p>
+    <div id="terminal"></div>
+    <input type="text" id="commandInput" placeholder="Enter command..." autofocus>
+
+    <script>
+        const terminal = document.getElementById("terminal");
+        const input = document.getElementById("commandInput");
+
+        function logMessage(message) {
+            terminal.innerHTML += `<p>> ${message}</p>`;
+            terminal.scrollTop = terminal.scrollHeight;
+        }
+
+        logMessage("System Locked. Awaiting command...");
+
+        input.addEventListener("keypress", function(event) {
+            if (event.key === "Enter") {
+                event.preventDefault();
+                let command = input.value.trim();
+                logMessage(command);
+                input.value = "";
+
+                if (command === "access_granted") {
+                    window.location.href = "success.html";
+                } else {
+                    logMessage("ERROR: Invalid command.");
+                    document.body.classList.add("glitch");
+                    setTimeout(() => document.body.classList.remove("glitch"), 500);
+                }
+            }
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Final Access</title>
+    <style>
+        body { background-color: black; color: lime; font-family: monospace; text-align: center; padding: 50px; }
+        .hidden { display: none; }
+    </style>
+</head>
+<body>
+    <h1>🎉 ACCESS GRANTED 🎉</h1>
+    <p id="message" class="hidden">The system was never really secure...</p>
+    <p><a href="../4/index.html">Enter the Admin Portal</a></p>
+    <script>
+        setTimeout(() => {
+            document.getElementById("message").classList.remove("hidden");
+        }, 5000);
+    </script>
+</body>
+</html>

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Corrupt Terminal</title>
+    <style>
+        body { background-color: black; color: lime; font-family: monospace; text-align: center; padding: 20px; }
+        #terminal { width: 80%; height: 300px; background: black; border: 2px solid lime; padding: 10px; overflow-y: auto; margin: auto; }
+        input { background: black; color: lime; border: none; font-family: monospace; width: 100%; }
+        .hidden { display: none; }
+        .glitch { animation: glitch 0.3s infinite alternate; }
+        @keyframes glitch {
+            0% { transform: skewX(-10deg); color: red; }
+            100% { transform: skewX(10deg); color: lime; }
+        }
+    </style>
+</head>
+<body>
+    <h1>🛑 SYSTEM FAILURE DETECTED 🛑</h1>
+    <p>Decrypt the security key before the system resets.</p>
+    <p id="timer">Time Left: 60s</p>
+    <div id="terminal"></div>
+    <input type="text" id="commandInput" placeholder="Enter decryption key..." autofocus>
+    
+    <script>
+        let timer = 60;
+        let terminal = document.getElementById("terminal");
+        let input = document.getElementById("commandInput");
+
+        function logMessage(message) {
+            let p = document.createElement("p");
+            p.textContent = `> ${message}`;
+            terminal.appendChild(p);
+            terminal.scrollTop = terminal.scrollHeight;
+        }
+
+        function startTimer() {
+            let interval = setInterval(() => {
+                timer--;
+                document.getElementById("timer").innerText = "Time Left: " + timer + "s";
+                if (timer <= 0) {
+                    clearInterval(interval);
+                    document.body.innerHTML = "<h1 style='color:red;'>❌ SYSTEM LOCKED ❌</h1><p>You failed...</p>";
+                }
+            }, 1000);
+        }
+
+        logMessage("SYSTEM: Security Key Encrypted.");
+        logMessage("Encrypted Key: @#1xa2y3b4c5$%");
+        logMessage("Hint: Extract only numbers in order.");
+        startTimer();
+
+        input.addEventListener("keypress", function(event) {
+            if (event.key === "Enter") {
+                event.preventDefault();
+                let command = input.value.trim();
+                logMessage(command);
+                input.value = "";
+
+                if (command === "12345") {
+                    window.location.href = "success.html";
+                } else {
+                    logMessage("ERROR: Wrong key.");
+                    document.body.classList.add("glitch");
+                    setTimeout(() => document.body.classList.remove("glitch"), 500);
+                }
+            }
+        });
+    </script>
+</body>
+</html>

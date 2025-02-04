@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Morse Code Decryption</title>
+    <style>
+        body { background-color: black; color: lime; font-family: monospace; text-align: center; padding: 20px; }
+        #terminal { width: 80%; height: 200px; background: black; border: 2px solid lime; padding: 10px; overflow-y: auto; margin: auto; }
+        input, button { background: black; color: lime; border: 1px solid lime; font-family: monospace; padding: 5px; margin: 5px; }
+        .hidden { display: none; }
+    </style>
+</head>
+<body>
+    <h1>🔓 Morse Code Challenge</h1>
+    <p>Decrypt the Morse Code and solve the riddle.</p>
+    <div id="terminal">
+        <p>Encrypted Message: <b>.... --- .-- / -- .- -. -.-- / .-.. . - - . .-. ... / .- .-. . / .. -. / - .... . / . . -. --. .-.. .. ... .... / . .-.. .--. .... .- -... . -</b></p>
+    </div>
+
+    <input type="text" id="answerInput" placeholder="Enter Answer">
+    <button onclick="checkAnswer()">Submit Answer</button>
+    <p id="result"></p>
+
+    <script>
+        function checkAnswer() {
+            let answer = document.getElementById("answerInput").value.trim().toLowerCase();
+            if (answer === "26") {
+                window.location.href = "success.html";
+            } else {
+                document.getElementById("result").innerText = "❌ Wrong answer. Try again!";
+            }
+        }
+    </script>
+</body>
+</html>

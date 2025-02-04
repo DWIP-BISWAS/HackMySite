@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>💀 Level 9 - Choose Your Path 💀</title>
+    <style>
+        body {
+            font-family: 'Courier New', monospace;
+            background-color: black;
+            color: lime;
+            text-align: center;
+        }
+        h1 {
+            text-shadow: 0px 0px 10px lime;
+        }
+        .container {
+            display: flex;
+            justify-content: center;
+            margin-top: 50px;
+        }
+        .form-box {
+            border: 2px solid lime;
+            padding: 20px;
+            margin: 10px;
+            width: 300px;
+        }
+        input {
+            background-color: black;
+            color: lime;
+            border: 1px solid lime;
+            padding: 5px;
+            width: 80%;
+        }
+        button {
+            background-color: lime;
+            color: black;
+            border: none;
+            padding: 5px 10px;
+            cursor: pointer;
+        }
+        .glitch {
+            color: lime;
+            text-shadow: 2px 2px 10px lime;
+            animation: glitch 1s infinite alternate;
+        }
+        @keyframes glitch {
+            0% { transform: translateX(1px); }
+            100% { transform: translateX(-1px); }
+        }
+    </style>
+</head>
+<body>
+    <h1 class="glitch">🔥 LEVEL 9 - THE ILLUSION OF CHOICE 🔥</h1>
+    <p>Two doors. Two choices. Only one way in. Choose wisely. only one chance.</p>
+
+    <div class="container">
+        <!-- Fake Secure Login -->
+        <div class="form-box">
+            <h3>🔒 SECURE LOGIN</h3>
+            <p>AES-256 Encryption Enabled</p>
+            <form action="login.php" method="POST">
+                <input type="text" name="username" placeholder="Username" required><br><br>
+                <input type="password" name="password" placeholder="Password" required><br><br>
+                <button type="submit">Login</button>
+            </form>
+        </div>
+
+        <!-- Fake Vulnerable Login -->
+        <div class="form-box">
+            <h3>⚠️ INSECURE LOGIN</h3>
+            <p>No security. Totally hackable.</p>
+            <form action="login.php" method="POST">
+                <input type="text" name="username" placeholder="Username" required><br><br>
+                <input type="password" name="password" placeholder="Password" required><br><br>
+                <button type="submit">Login</button>
+            </form>
+        </div>
+    </div>
+</body>
+</html>

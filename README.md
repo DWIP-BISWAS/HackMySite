@@ -25,7 +25,7 @@ HackMySite is an interactive hacking challenge website designed to test and impr
 - **Backend**: PHP, MySQL  
 - **Security Concepts**: Steganography, encryption, source code analysis, and more.
 
-##⚠️⚠️⚠️Disclaimer⚠️⚠️⚠️
+## ⚠️⚠️⚠️Disclaimer⚠️⚠️⚠️
 
 **⚠️⚠️⚠️This project is intended for educational purposes only. Do not attempt unauthorized hacking on real systems. Ethical hacking should only be performed with proper permissions.⚠️⚠️⚠️**
 
